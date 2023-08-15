@@ -1,15 +1,15 @@
-import { type UserModel } from '../domain/user.model'
+import { DBMysql } from '../../database/mysql/aplication/mysql'
 import { type UserRepository } from '../domain/user.repository'
 
-export class UserService implements UserRepository {
-  getUserById (id: number): UserModel {
-    console.log(id)
-    return {
-      id: 1,
-      email: 'email@email.es',
-      password: '123123',
-      createdAt: 'ayer',
-      updatedAt: 'hoy'
-    }
+class UserService implements UserRepository {
+  private readonly connection: DBMysql
+  constructor () {
+    this.connection = new DBMysql()
+  }
+
+  async getUserById (id: number): Promise<any> {
+    return await this.connection.query(`select * from users where id = ${id}`)
   }
 }
+
+export default new UserService()

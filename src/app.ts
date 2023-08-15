@@ -21,7 +21,7 @@ export class App {
 
   public start (): void {
     this.app.listen(this.app.get('port'), () => {
-      console.log(`Server listening in port ${this.port}`)
+      console.log(`✨Server listening in port ${this.port}✨`)
     })
   }
 }
