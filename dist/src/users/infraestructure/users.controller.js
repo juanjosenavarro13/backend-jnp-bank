@@ -16,7 +16,7 @@ const user_service_1 = __importDefault(require("../aplication/user.service"));
 class UserController {
     register(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = yield user_service_1.default.getUserById(14);
+            const user = yield user_service_1.default.getUserById(1);
             res.send(user[0]);
         });
     }

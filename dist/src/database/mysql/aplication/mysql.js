@@ -22,12 +22,7 @@ class DBMysql {
         this.password = (_c = process.env.MYSQLPASSWORD) !== null && _c !== void 0 ? _c : '';
         this.database = (_d = process.env.MYSQLDATABASE) !== null && _d !== void 0 ? _d : 'bank';
         this.connection = this.createConnection();
-        this.config = { host: this.host, user: this.user, password: this.password, database: this.database };
         this.connection.connect();
-    }
-    getConnection() {
-        console.log('✨Conexion MYSQL✨');
-        return this.connection;
     }
     query(sql) {
         return __awaiter(this, void 0, void 0, function* () {
